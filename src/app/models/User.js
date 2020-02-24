@@ -29,7 +29,7 @@ class User extends Model {
 
   // Adicionar fk para avatar
   static associate(models) {
-    this.belongsTo(models.File, { foreignKey: 'avatar_id' });
+    this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar' });
   }
 
   // Método para checkar a password

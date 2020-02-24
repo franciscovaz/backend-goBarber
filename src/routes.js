@@ -3,6 +3,7 @@ import multer from 'multer';
 import multerConfig from './config/multer';
 
 import UserController from './app/controllers/UserController';
+import ProviderController from './app/controllers/ProviderController';
 import SessionController from './app/controllers/SessionController';
 import FileController from './app/controllers/FileController';
 import AuthMiddleware from './app/middlewares/auth';
@@ -17,6 +18,8 @@ routes.post('/sessions', SessionController.store);
 routes.use(AuthMiddleware);
 
 routes.put('/users', UserController.update);
+
+routes.get('/providers', ProviderController.index);
 
 // upload.single('file') // upload de um unico ficheiro, de nome no req 'file'
 routes.post('/files', upload.single('file'), FileController.store);
