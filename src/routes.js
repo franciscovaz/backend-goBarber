@@ -8,6 +8,7 @@ import AppointmentController from './app/controllers/AppointmentController';
 import SessionController from './app/controllers/SessionController';
 import FileController from './app/controllers/FileController';
 import ScheduleController from './app/controllers/ScheduleController';
+import NotificationController from './app/controllers/NotificationController';
 
 import AuthMiddleware from './app/middlewares/auth';
 
@@ -28,6 +29,9 @@ routes.post('/appointments', AppointmentController.store);
 routes.get('/appointments', AppointmentController.index);
 
 routes.get('/schedule', ScheduleController.index);
+
+routes.get('/notifications', NotificationController.index);
+routes.put('/notifications/:id', NotificationController.update);
 
 // upload.single('file') // upload de um unico ficheiro, de nome no req 'file'
 routes.post('/files', upload.single('file'), FileController.store);
