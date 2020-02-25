@@ -24,6 +24,7 @@ routes.put('/users', UserController.update);
 routes.get('/providers', ProviderController.index);
 
 routes.post('/appointments', AppointmentController.store);
+routes.get('/appointments', AppointmentController.index);
 
 // upload.single('file') // upload de um unico ficheiro, de nome no req 'file'
 routes.post('/files', upload.single('file'), FileController.store);
