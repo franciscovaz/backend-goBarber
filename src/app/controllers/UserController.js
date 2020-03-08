@@ -14,7 +14,7 @@ class UserController {
     });
 
     if (!(await schema.isValid(req.body))) {
-      return res.status(401).json({ error: 'Validation fails,' });
+      return res.status(401).json({ error: 'Validation fails.' });
     }
     // verifica se já ha user com email enviado
     const userExists = await User.findOne({ where: { email: req.body.email } });
